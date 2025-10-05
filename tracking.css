@@ -1,0 +1,57 @@
+/* Alapból rejtve */
+.tracking-status {
+  display: block;
+  width: 80%;          /* a doboz a képernyő 80%-át foglalja el */
+  max-width: 1600px;    /* legnagyobb szélesség: 1600px */
+  margin: 2rem auto;   /* középre igazítás függőlegesen és vízszintesen */
+  padding: 1rem 2rem;  /* belső térköz */
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+}
+
+/* Vissza gomb */
+.back-button {
+  padding: 2rem;
+  text-align: left;
+}
+.back-button .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.back-button .btn:hover {
+  background: rgba(255,255,255,0.35);
+  color: #000e31;
+}
+
+/* Status vonal stílus */
+.status-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Egyes lépések */
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  opacity: 0.5; /* halvány alapból */
+  transition: all 0.3s;
+}
+
+.status-step.completed,
+.status-step.active {
+  opacity: 1;
+}
+
+.status-step .icon {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}

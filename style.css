@@ -1,0 +1,267 @@
+/* ==== Alap beállítások ==== */
+* { 
+  margin: 0; /* külső margó kinullázása */
+  padding: 0; /* belső térköz kinullázása */
+  box-sizing: border-box; /* szélesség számításnál a padding és border beleszámít */
+}
+
+body {
+  font-family: Arial, sans-serif; /* betűtípus */
+  color: white; /* alap szövegszín */
+  background: radial-gradient(circle at top left, #4139dc, #2563eb, #3a1678); /* háttér színátmenet */
+  line-height: 1.5; /* sorok közti távolság */
+}
+
+a { color: white; text-decoration: none; } /* linkek fehérek, nincs aláhúzás */
+h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
+
+
+/* ==== Fejléc (header) ==== */
+.header {
+  display: flex; /* rugalmas elrendezés: logó balra, menü jobbra */
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.15); /* áttetsző háttér */
+  backdrop-filter: blur(10px); /* üveghatás */
+  position: sticky; /* mindig fent marad */
+  top: 0;
+}
+
+/* Logó gomb (DropNet) */
+.logo-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* hover animáció */
+}
+
+.logo-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.35);
+}
+
+/* Menü gombok a fejlécben */
+.header .button a.btn {
+  margin-left: 1.5rem;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.header .button a.btn:hover {
+  transform: scale(1.2); /* nagyítás rámutatásnál */
+  background: rgba(255, 255, 255, 0.3);
+  color: #000e31; /* szövegszín sötétkékre vált */
+}
+
+
+/* ==== Hero (bemutatkozó rész) ==== */
+.hero {
+  display: grid; /* rács elrendezés: két oszlop */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem; /* oszlopok közötti tér */
+  padding: 4rem 2rem;
+}
+
+.hero-text h1 { font-size: 2.5rem; font-weight: bold; }
+.hero-text h3 { margin-top: 1rem; }
+
+.buttons { display: flex; gap: 1rem; margin: 1rem 0; }
+
+/* Hero szekció gombjai */
+.hero .btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.35);
+  color: #000e31;
+}
+
+/* ==== Csomagkövető form ==== */
+.tracking-form {
+  display: flex; 
+  gap: 0.5rem; 
+  margin-top: 1rem;
+  background: rgba(255,255,255,0.1); 
+  padding: 0.5rem; 
+  border-radius: 8px;
+}
+
+.tracking-form input {
+  flex: 1; /* kitölti a maradék helyet */
+  padding: 0.5rem; 
+  border: none; 
+  background: transparent; 
+  color: white;
+}
+
+.tracking-form input::placeholder {
+  color: white; 
+  opacity: 1;
+}
+
+.tracking-form button {
+  padding: 0.5rem 1rem; 
+  background: rgba(255,255,255,0.2); 
+  border: none; 
+  border-radius: 6px;
+  color: white; 
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tracking-form button:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* ==== Hero mockup (statisztika doboz) ==== */
+.hero-mockup { text-align: center; }
+.screen {
+  background: linear-gradient(135deg,#6366f1, #3b82f6, #8b5cf6);
+  border-radius: 16px; 
+  padding: 1rem; 
+  height: 200px;
+  opacity: 0.7;
+}
+.stats { display: flex; justify-content: space-around; align-items: center; height: 100%;}
+.stats div { text-align: center;}
+.stats span { font-size: 1.5rem; font-weight: bold; }
+.mockup-label { margin-top: 0.5rem; font-size: 0.8rem;}
+
+
+/* ==== Szolgáltatások ==== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); /* rugalmas oszlopok */
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+}
+.feature {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+.feature:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* ==== Árlista ==== */
+.arazas { padding: 3rem 2rem; text-align: center; }
+.cards { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-width: 180px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.25);
+}
+.price { font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0; }
+
+
+/* ==== Kapcsolat űrlap ==== */
+.contact { padding: 3rem 2rem; text-align: center; }
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact textarea { resize: none; } /* ne lehessen átméretezni */
+.contact input, .contact textarea {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+.contact button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact button:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+
+/* ==== Lábléc ==== */
+.footer {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+}
+.footer div { display: flex; gap: 1rem; }
+.footer a { color: white; }
+.footer a:hover { text-decoration: underline; }
+/* =========================
+   Teljes képernyős háttér div
+   Ez a div adja a mozgó gradient hátteret
+========================= */
+.background {
+  position: fixed;   /* Fixen a viewport-hoz rögzítve, nem mozog a scroll-lal */
+  top: 0;            /* a képernyő tetején kezdődik */
+  left: 0;           /* a képernyő bal oldalán kezdődik */
+  width: 100%;       /* teljes szélesség */
+  height: 100%;      /* teljes magasság */
+  z-index: -1;       /* minden tartalom mögött jelenik meg */
+  overflow: hidden;  /* ne legyen görgetősáv a div miatt */
+
+  /* Alap gradient a DropNet stílusához illeszkedő színekkel */
+  background: linear-gradient(-45deg, #2923a0, #164fcaeb, #3d0b94d4, #2b5ecd);
+
+  /* A háttér nagyobb mérete, hogy legyen hely a lassú animációnak */
+  background-size: 400% 400%;
+
+  /* Alkalmazzuk az animációt: 30 másodperc, easing, végtelen ismétlés */
+  animation: gradient 60s ease infinite;
+}
+
+/* =========================
+   Gradient animáció definíció
+========================= */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;   /* induló pozíció a gradient bal oldalán */
+  }
+  50% {
+    background-position: 100% 50%; /* a gradient elmozdul jobbra a középidőre */
+  }
+  100% {
+    background-position: 0% 50%;   /* visszatér az induló pontra */
+  }
+}
