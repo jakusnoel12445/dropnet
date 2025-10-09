@@ -193,6 +193,7 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.25s, background 0.25s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 .pkg-card:hover {
   transform: translateY(-5px);
@@ -332,5 +333,6 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
     background-position: 0% 50%;   /* visszatér az induló pontra */
   }
 }
+
 
 
