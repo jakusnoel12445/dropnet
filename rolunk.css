@@ -31,25 +31,36 @@ body {
 
 /* ==== Rólunk szekció ==== */
 .about-us {
-  max-width: 800px;
+  max-width: 900px;
   margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  text-align: left;
+  padding: 0 1rem;
 }
 
-.about-us h2 {
+/* Kártya stílus */
+.about-card {
+  background: rgba(255,255,255,0.05);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.about-card h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid rgba(255,255,255,0.3);
   padding-bottom: 0.5rem;
 }
 
-.about-us p {
+.about-card p {
   font-size: 1rem;
   margin-bottom: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   opacity: 0.9;
 }
