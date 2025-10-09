@@ -164,20 +164,118 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
 
 
 /* ==== Árlista ==== */
-.arazas { padding: 3rem 2rem; text-align: center; }
-.cards { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 1.5rem;
+/* ==== Részletes csomagkártyák (DropNet) ==== */
+.detailed-pricing h2 {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.detailed-pricing .muted {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+}
+.detailed-pricing p.muted {
+  margin: 0 0 1.25rem 0;
+  opacity: 0.85;
+}
+
+/* kártyák elrendezése */
+.package-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* egy kártya */
+.package-card {
+  background: rgba(255,255,255,0.06);
+  padding: 1.25rem;
   border-radius: 12px;
-  min-width: 180px;
-  transition: transform 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transition: transform 0.25s, background 0.25s;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.card:hover {
-  transform: scale(1.05);
-  background: rgba(255,255,255,0.25);
+.package-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.09);
 }
-.price { font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0; }
+
+/* fejrészek */
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.card-head h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+.card-head .muted { font-size: 0.85rem; color: rgba(255,255,255,0.9); }
+
+/* badge (ikon) */
+.badge {
+  background: rgba(255,255,255,0.12);
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+}
+
+/* rövid leírás */
+.package-card .desc {
+  margin: 0.75rem 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* specifikációk lista */
+.specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+.specs li strong { color: rgba(255,255,255,0.95); }
+
+/* ár külön kiemelése */
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.08));
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 0.25rem;
+}
+
+/* express speciális stílus */
+.package-card.express {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+}
+.package-card.express .badge {
+  background: linear-gradient(90deg, #ffcc00, #ff8a00);
+  color: #071029;
+  font-weight: 700;
+}
+
+/* megjegyzés stílus */
+.specs .note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 0.35rem;
+}
+
+/* reszponzív finomítás */
+@media (max-width: 520px) {
+  .package-card { min-height: 200px; padding: 1rem; }
+  .price { font-size: 1.05rem; }
+}
 
 
 /* ==== Kapcsolat űrlap ==== */
@@ -265,3 +363,4 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
     background-position: 0% 50%;   /* visszatér az induló pontra */
   }
 }
+
