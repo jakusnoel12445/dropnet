@@ -1,33 +1,101 @@
-<!-- Kapcsolat / Ügyfélszolgálat -->
-<section class="contact">
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DropNet – Ügyfélszolgálat</title>
+  <link rel="stylesheet" href="ugyfelszolgalat.css" />
+</head>
+<body>
+
+  <!-- Vissza gomb -->
   <div class="back-button">
-    <a href="index.html" class="btn">⬅ Vissza a főoldalra</a>
-      <!-- Alap stílusok -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- Nyomonkövetés-specifikus stílusok -->
-  <link rel="stylesheet" href="elerhetoseink.css" />
+    <a href="index.html" class="btn">← Vissza a főoldalra</a>
   </div>
 
-  <h2>Kapcsolat</h2>
-  <p>Van kérdésed vagy észrevételed? Írd meg nekünk, és 24 órán belül válaszolunk!</p>
+  <header class="contact-header">
+    <h1>Ügyfélszolgálat</h1>
+    <p>Minden fontos ügyintézési lehetőség egy helyen — gyorsan, egyszerűen.</p>
+  </header>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Név" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="Üzenet" required></textarea>
-    <button type="submit">Üzenet elküldése</button>
-  </form>
+  <section class="cards-container">
 
-  <div class="contact-info">
-    <p>Telefon: +36 30 123 4567</p>
-    <p>Email: info@dropnet.hu</p>
-  </div>
-</section>
+    <!-- Telefonos -->
+    <div class="service-card">
+      <h2>☎ Telefonon</h2>
+      <p>Ügyfélszolgálatunk hívható <strong>munkanapokon 9:00 – 17:00</strong> óra között.</p>
+      <p class="highlight">+36 1 234 5678</p>
+    </div>
 
-  <div class="contact-info">
-    <p>Telefon: +36 30 123 4567</p>
-    <p>Email: info@dropnet.hu</p>
-  </div>
+    <!-- Lemondás -->
+    <div class="service-card">
+      <h2>📧 Lemondás e-mailben</h2>
+      <p>Lemondás esetén kérjük e-mailben vegye fel velünk a kapcsolatot:</p>
+      <p class="highlight">ugyfelszolgalat@dropnet.hu</p>
+      <p>A lemondás előtt kérjük, olvassa el az elállási tájékoztatót.</p>
+    </div>
 
-</section>
+    <!-- Kárbejelentés -->
+    <div class="service-card">
+      <h2>📦 Kárbejelentés</h2>
+      <ul>
+        <li>Sérült csomag</li>
+        <li>Sérült tartalom</li>
+        <li>Káresemények bejelentése</li>
+      </ul>
+      <a href="https://nethely.hu/panasz" class="btn secondary">Bejelentés WordPress oldalon</a>
+    </div>
 
+    <!-- Csomagkeresés -->
+    <div class="service-card">
+      <h2>🔍 Csomagkeresés</h2>
+      <ul>
+        <li>Státusz nélküli csomagok</li>
+        <li>Elveszett csomagok</li>
+        <li>Csomagkeresési igények</li>
+      </ul>
+    </div>
+
+    <!-- Utánvét panasz -->
+    <div class="service-card">
+      <h2>💰 Utánvét panasz</h2>
+      <ul>
+        <li>Utánvét összeggel kapcsolatos panasz</li>
+        <li>Beszedéssel kapcsolatos problémák</li>
+        <li>Utólagos beszedési igények</li>
+      </ul>
+    </div>
+
+    <!-- Számlareklamáció -->
+    <div class="service-card">
+      <h2>🧾 Számlareklamáció</h2>
+      <ul>
+        <li>Számla tartalmi vagy formai kifogásolása</li>
+        <li>Számlázott szolgáltatással kapcsolatos reklamációk</li>
+      </ul>
+    </div>
+
+    <!-- Adatvédelmi panasz -->
+    <div class="service-card">
+      <h2>🔐 Adatvédelmi panasz</h2>
+      <ul>
+        <li>Adatkezeléssel kapcsolatos kérdések</li>
+        <li>Nem megfelelőségek bejelentése</li>
+        <li>Adatvédelmi problémák</li>
+      </ul>
+    </div>
+
+    <!-- Általános panasz -->
+    <div class="service-card">
+      <h2>⚠ Panasz</h2>
+      <ul>
+        <li>Szolgáltatások teljesítésével kapcsolatos kifogások</li>
+        <li>Munkatársakkal kapcsolatos reklamációk</li>
+        <li>Egyéb, szállításhoz nem köthető panaszok</li>
+      </ul>
+    </div>
+
+  </section>
+
+</body>
+</html>
