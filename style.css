@@ -1,360 +1,66 @@
 /* ==== Alap beállítások ==== */
 * { 
-  margin: 0; /* külső margó kinullázása */
-  padding: 0; /* belső térköz kinullázása */
-  box-sizing: border-box; /* szélesség számításnál a padding és border beleszámít */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif; /* betűtípus */
-  color: white; /* alap szövegszín */
-  background: radial-gradient(circle at top left, #4139dc, #2563eb, #3a1678); /* háttér színátmenet */
-  line-height: 1.5; /* sorok közti távolság */
+  font-family: 'Poppins', Arial, sans-serif;
+  color: white;
+  line-height: 1.5;
+  background: linear-gradient(135deg, #2923a0, #164fca, #2b5ecd);
 }
 
-a { color: white; text-decoration: none; } /* linkek fehérek, nincs aláhúzás */
-h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
-
-
-/* ==== Fejléc (header) ==== */
+/* ==== Fejléc ==== */
 .header {
-  display: flex; /* rugalmas elrendezés: logó balra, menü jobbra */
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.15); /* áttetsző háttér */
-  backdrop-filter: blur(10px); /* üveghatás */
-  position: sticky; /* mindig fent marad */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(5px); /* csökkentett blur */
+  position: sticky;
   top: 0;
+  z-index: 100;
 }
 
-/* Logó gomb (DropNet) */
 .logo-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.15);
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.3s; /* hover animáció */
+  transition: transform 0.25s, background 0.25s;
 }
-
 .logo-btn:hover {
-  transform: scale(1.1);
-  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.25);
 }
 
-/* Menü gombok a fejlécben */
 .header .button a.btn {
   margin-left: 1.5rem;
   display: inline-block;
   padding: 0.4rem 1rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.12);
   border-radius: 8px;
   color: white;
-  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.25s, background 0.25s;
 }
-
 .header .button a.btn:hover {
-  transform: scale(1.2); /* nagyítás rámutatásnál */
-  background: rgba(255, 255, 255, 0.3);
-  color: #000e31; /* szövegszín sötétkékre vált */
-}
-
-
-/* ==== Hero (bemutatkozó rész) ==== */
-.hero {
-  display: grid; /* rács elrendezés: két oszlop */
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem; /* oszlopok közötti tér */
-  padding: 4rem 2rem;
-}
-
-.hero-text h1 { font-size: 2.5rem; font-weight: bold; }
-.hero-text h3 { margin-top: 1rem; }
-
-.buttons { display: flex; gap: 1rem; margin: 1rem 0; }
-
-/* Hero szekció gombjai */
-.hero .btn {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  font-size: 1.1rem;
-  transition: transform 0.3s;
-}
-
-.hero .btn:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255,255,255,0.25);
   color: #000e31;
 }
 
-/* ==== Csomagkövető form ==== */
-.tracking-form {
-  display: flex; 
-  gap: 0.5rem; 
-  margin-top: 1rem;
-  background: rgba(255,255,255,0.1); 
-  padding: 0.5rem; 
-  border-radius: 8px;
-}
-
-.tracking-form input {
-  flex: 1; /* kitölti a maradék helyet */
-  padding: 0.5rem; 
-  border: none; 
-  background: transparent; 
-  color: white;
-}
-
-.tracking-form input::placeholder {
-  color: white; 
-  opacity: 1;
-}
-
-.tracking-form button {
-  padding: 0.5rem 1rem; 
-  background: rgba(255,255,255,0.2); 
-  border: none; 
-  border-radius: 6px;
-  color: white; 
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.tracking-form button:hover {
-  background: rgba(255,255,255,0.35);
-}
-
-/* ==== Hero mockup (statisztika doboz) ==== */
-.hero-mockup { text-align: center; }
-.screen {
-  background: linear-gradient(135deg,#6366f1, #3b82f6, #8b5cf6);
-  border-radius: 16px; 
-  padding: 1rem; 
-  height: 200px;
-  opacity: 0.7;
-}
-.stats { display: flex; justify-content: space-around; align-items: center; height: 100%;}
-.stats div { text-align: center;}
-.stats span { font-size: 1.5rem; font-weight: bold; }
-.mockup-label { margin-top: 0.5rem; font-size: 0.8rem;}
-
-
-/* ==== Szolgáltatások ==== */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); /* rugalmas oszlopok */
-  gap: 1.5rem;
-  padding: 3rem 2rem;
-}
-.feature {
-  background: rgba(255,255,255,0.1);
-  padding: 1rem;
-  border-radius: 12px;
-  transition: transform 0.3s;
-}
-.feature:hover {
-  transform: scale(1.05);
-  background: rgba(255,255,255,0.2);
-}
-
-
-/* ==== Árlista ==== */
-.pricing-section {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-.pricing-section h2 {
-  margin-bottom: 0.5rem;
-}
-.pricing-section .intro {
-  margin-bottom: 1.5rem;
-  color: rgba(255,255,255,0.85);
-  font-size: 1rem;
-}
-
-/* grid elrendezés a kártyáknak */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-}
-
-/* egy kártya stílusa */
-.pkg-card {
-  background: rgba(255,255,255,0.07);
-  border-radius: 10px;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.25s, background 0.25s;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-.pkg-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.1);
-}
-
-/* fej / cím rész */
-.pkg-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.pkg-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-.pkg-header .tag {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.9);
-}
-
-/* tartalom rész */
-.pkg-body {
-  margin: 1rem 0;
-  color: white;
-  font-size: 0.95rem;
-}
-
-/* ár / lábléc */
-.pkg-footer {
-  margin-top: auto;
-}
-.pkg-footer .price {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
-}
-
-/* express külön */
-.pkg-card.express {
-  border: 2px solid rgba(255,255,255,0.2);
-}
-.pkg-card.express:hover {
-  border-color: rgba(255,255,255,0.35);
-}
-
-/* mobil finomítás */
-@media (max-width: 480px) {
-  .pkg-header h3 { font-size: 1.1rem; }
-  .pkg-footer .price { font-size: 1.2rem; }
-}
-
-
-
-/* ==== Kapcsolat űrlap ==== */
-.contact { padding: 3rem 2rem; text-align: center; }
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
-.contact textarea { resize: none; } /* ne lehessen átméretezni */
-.contact input, .contact textarea {
-  padding: 0.7rem;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.2);
-  color: white;
-}
-.contact input::placeholder,
-.contact textarea::placeholder {
-  color: white;
-  opacity: 0.7;
-}
-.contact button {
-  padding: 0.7rem;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.2);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact button:hover {
-  background: rgba(255,255,255,0.35);
-}
-
-
-/* ==== Lábléc ==== */
-.footer {
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255,255,255,0.05);
-  font-size: 0.9rem;
-}
-.footer div { display: flex; gap: 1rem; }
-.footer a { color: white; }
-.footer a:hover { text-decoration: underline; }
-/* =========================
-   Teljes képernyős háttér div
-   Ez a div adja a mozgó gradient hátteret
-========================= */
-.background {
-  position: fixed;   /* Fixen a viewport-hoz rögzítve, nem mozog a scroll-lal */
-  top: 0;            /* a képernyő tetején kezdődik */
-  left: 0;           /* a képernyő bal oldalán kezdődik */
-  width: 100%;       /* teljes szélesség */
-  height: 100%;      /* teljes magasság */
-  z-index: -1;       /* minden tartalom mögött jelenik meg */
-  overflow: hidden;  /* ne legyen görgetősáv a div miatt */
-
-  /* Alap gradient a DropNet stílusához illeszkedő színekkel */
-  background: linear-gradient(-45deg, #2923a0, #164fcaeb, #3d0b94d4, #2b5ecd);
-
-  /* A háttér nagyobb mérete, hogy legyen hely a lassú animációnak */
-  background-size: 400% 400%;
-
-  /* Alkalmazzuk az animációt: 30 másodperc, easing, végtelen ismétlés */
-  animation: gradient 60s ease infinite;
-}
-
-/* =========================
-   Gradient animáció definíció
-========================= */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;   /* induló pozíció a gradient bal oldalán */
-  }
-  50% {
-    background-position: 100% 50%; /* a gradient elmozdul jobbra a középidőre */
-  }
-  100% {
-    background-position: 0% 50%;   /* visszatér az induló pontra */
-  }
-}
-
-
-/* ==== Professzionális tipográfia és árnyékok ==== */
-body {
-  font-family: 'Poppins', Arial, sans-serif; /* modernebb betűtípus */
-  letter-spacing: 0.3px; /* finom szellősség */
-}
-
-h1, h2, h3, h4 {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.3); /* címsor árnyék */
-}
-
-a.btn, .logo-btn, .hero .btn, .contact button {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-}
-
-/* ==== Hero finomítás ==== */
+/* ==== Hero ==== */
 .hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 2rem;
   align-items: center;
   min-height: 60vh;
 }
@@ -365,6 +71,7 @@ a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
   background: linear-gradient(90deg, #fff, #c9d8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .hero-text h3 {
@@ -372,87 +79,61 @@ a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
   opacity: 0.9;
 }
 
-/* Hero statisztika doboz – modernebb */
-.hero-mockup .screen {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-  transition: transform 0.4s;
+/* Hero gombok */
+.hero .btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  transition: transform 0.25s, background 0.25s;
 }
-.hero-mockup .screen:hover {
-  transform: scale(1.03);
-}
-.stats span {
-  font-size: 1.8rem;
+.hero .btn:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.25);
+  color: #000e31;
 }
 
-/* ==== Szolgáltatások kártyák modernizálása ==== */
-.feature {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.15);
+/* ==== Kártyák (árlista és szolgáltatások) ==== */
+.feature, .pkg-card {
+  background: rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 1rem;
   text-align: center;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px); /* csökkentett blur */
 }
-.feature:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.15);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-}
-
-/* ==== Árlista kártyák finomítva ==== */
-.pkg-card {
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  transition: transform 0.35s, box-shadow 0.35s;
-}
-.pkg-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+.feature:hover, .pkg-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* express kiemelés */
 .pkg-card.express {
-  border: 2px solid #ffffff40;
-  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(37,99,235,0.15));
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
 }
 
-/* ==== Lábléc finomítás ==== */
-.footer {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255,255,255,0.08);
+/* ==== Háttér optimalizálva ==== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #2923a0, #164fca, #2b5ecd);
 }
 
-/* ==== Háttér animáció extra fényekkel ==== */
-.background::after {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
-  filter: blur(60px);
-  animation: float 20s ease-in-out infinite alternate;
+/* opcionális lassú animáció (csak ha nem akad) */
+@media (prefers-reduced-motion: no-preference) {
+  .background {
+    background-size: 200% 200%;
+    animation: gradient 120s ease infinite;
+  }
 }
-.background::before {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
-  filter: blur(80px);
-  animation: float 30s ease-in-out infinite alternate;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
-@keyframes float {
-  0% { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(-40px) translateX(30px); }
-}
-
-
