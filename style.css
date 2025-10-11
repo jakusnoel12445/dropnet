@@ -335,4 +335,124 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
 }
 
 
+/* ==== Professzionális tipográfia és árnyékok ==== */
+body {
+  font-family: 'Poppins', Arial, sans-serif; /* modernebb betűtípus */
+  letter-spacing: 0.3px; /* finom szellősség */
+}
+
+h1, h2, h3, h4 {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3); /* címsor árnyék */
+}
+
+a.btn, .logo-btn, .hero .btn, .contact button {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* ==== Hero finomítás ==== */
+.hero {
+  align-items: center;
+  min-height: 60vh;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #fff, #c9d8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text h3 {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Hero statisztika doboz – modernebb */
+.hero-mockup .screen {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: transform 0.4s;
+}
+.hero-mockup .screen:hover {
+  transform: scale(1.03);
+}
+.stats span {
+  font-size: 1.8rem;
+}
+
+/* ==== Szolgáltatások kártyák modernizálása ==== */
+.feature {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+/* ==== Árlista kártyák finomítva ==== */
+.pkg-card {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.pkg-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* express kiemelés */
+.pkg-card.express {
+  border: 2px solid #ffffff40;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(37,99,235,0.15));
+}
+
+/* ==== Lábléc finomítás ==== */
+.footer {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ==== Háttér animáció extra fényekkel ==== */
+.background::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  filter: blur(60px);
+  animation: float 20s ease-in-out infinite alternate;
+}
+.background::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
+  filter: blur(80px);
+  animation: float 30s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-40px) translateX(30px); }
+}
+
 
