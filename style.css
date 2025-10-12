@@ -454,6 +454,3 @@ a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
   0% { transform: translateY(0) translateX(0); }
   100% { transform: translateY(-40px) translateX(30px); }
 }
-
-
-optimalizáld mert túlsűgosan akad
