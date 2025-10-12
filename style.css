@@ -23,7 +23,6 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
   align-items: center;
   padding: 1rem 2rem;
   background: rgba(255, 255, 255, 0.15); /* áttetsző háttér */
-  backdrop-filter: blur(10px); /* üveghatás */
   position: sticky; /* mindig fent marad */
   top: 0;
 }
@@ -454,3 +453,4 @@ a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
   0% { transform: translateY(0) translateX(0); }
   100% { transform: translateY(-40px) translateX(30px); }
 }
+
