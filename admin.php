@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit;
 }
@@ -14,6 +14,13 @@ if(isset($_POST['package_id'])){
     $location = trim($_POST['location']);
     $expected = trim($_POST['expected']);
 
+    // Státusz validálása
+    $allowed_status = ['felvéve','szallitas alatt','kiszallitva'];
+    if(!in_array($status, $allowed_status)){
+        $status = 'felvéve'; // alapértelmezett érték, ha érvénytelen
+    }
+
+    // Adatbázis frissítés
     $stmt = $conn->prepare("UPDATE packages SET status = ?, location = ?, expected_date = ? WHERE id = ?");
     $stmt->bind_param("sssi", $status, $location, $expected, $id);
     $stmt->execute();
