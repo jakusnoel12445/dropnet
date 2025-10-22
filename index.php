@@ -64,17 +64,6 @@ if(isset($_POST['tracking_number'])){
       <?php endif; ?>
     </div>
 
-    <!-- Hero mockup -->
-    <div class="hero-mockup">
-      <div class="screen">
-        <div class="stats">
-          <div><span>🚚</span><p>Gyors kézbesítés</p></div>
-          <div><span>📦</span><p>Valós idejű státusz</p></div>
-          <div><span>🏠</span><p>Országos lefedettség</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Szolgáltatások -->
   <section class="features">
