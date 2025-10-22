@@ -104,15 +104,13 @@ if(isset($_POST['tracking_number'])){
   </section>
 
   <!-- Kapcsolat -->
-  <section class="contact">
-    <h2>Kapcsolat</h2>
-    <form>
-      <input type="text" placeholder="Név" />
-      <input type="email" placeholder="Email" />
-      <textarea placeholder="Üzenet"></textarea>
-      <button>Küldés</button>
-    </form>
-  </section>
+<form action="kapcsolat.php" method="post">
+  <input type="text" name="nev" placeholder="Név" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <textarea name="uzenet" placeholder="Üzenet" required></textarea>
+  <button type="submit">Küldés</button>
+</form>
+
 
   <!-- Lábléc -->
   <footer class="footer">
