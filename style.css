@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif; /* betűtípus */
   color: white; /* alap szövegszín */
-  background: radial-gradient(circle at top left, #4139dc, #2563eb, #3a1678); /* háttér színátmenet */
+  background: radial-gradient(circle at top left, #2b2695, #1d1373, #3a1678); /* háttér színátmenet */
   line-height: 1.5; /* sorok közti távolság */
 }
 
@@ -18,32 +18,52 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
 
 /* ==== Fejléc (header) ==== */
 .header {
-  display: flex; /* rugalmas elrendezés: logó balra, menü jobbra */
-  justify-content: space-between; 
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.15); /* áttetsző háttér */
-   backdrop-filter: blur(10px); /* üveghatás */
-  position: sticky; /* mindig fent marad */
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;                /* 🔹 vízszintes elrendezés */
+  justify-content: space-between; /* 🔹 logó balra, gombok jobbra */
+  align-items: center;          /* 🔹 függőleges középre igazítás */
+  padding: 0.7rem 2rem;
+
+  background: rgba(75, 30, 189, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Logó gomb (DropNet) */
+/* ==== LOGÓ STÍLUS ==== */
 .logo-btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.2);
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s; /* hover animáció */
+  background: none !important;
+  padding: 0 !important;
+  border: none;
+  box-shadow: none;
 }
 
-.logo-btn:hover {
-  transform: scale(1.1);
-  background: rgba(255,255,255,0.35);
+.logo-btn img.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
+
+.logo-btn .logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: transparent;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+
+.logo-btn .logo:hover {
+  transform: scale(1.05);
+}
+
 
 /* Menü gombok a fejlécben */
 .header .button a.btn {
@@ -63,34 +83,78 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
 }
 
 
-/* ==== Hero (bemutatkozó rész) ==== */
+/* ==== Hero (bemutatkozó rész) új verzió ==== */
 .hero {
-  display: grid; /* rács elrendezés: két oszlop */
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem; /* oszlopok közötti tér */
-  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column; /* függőlegesen egymás alatt */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* középre igazítja a szöveget */
+  padding: 6rem 2rem;
+  min-height: 80vh; /* kitölti a képernyő nagy részét */
 }
 
-.hero-text h1 { font-size: 2.5rem; font-weight: bold; }
-.hero-text h3 { margin-top: 1rem; }
+/* Hero szövegek */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
-.buttons { display: flex; gap: 1rem; margin: 1rem 0; }
+.hero-text h3 {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
 
-/* Hero szekció gombjai */
-.hero .btn {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
+/* ==== Hero gombok (Csomagolási útmutató és Nyomonkövetés) ==== */
+.hero .buttons {
+  display: flex;              /* vízszintes elrendezés */
+  justify-content: center;    /* középre igazítás */
+  gap: 1.5rem;                /* növelt távolság a gombok között, hogy ne ütközzenek hoverkor */
+  margin-bottom: 1.5rem;      /* térköz az alatta lévő tracking formhoz vagy hr-hez */
+}
+
+.hero .buttons a.btn {
+  padding: 0.6rem 1.2rem;             /* belső térköz */
+  background: rgba(255,255,255,0.15); /* áttetsző háttér */
+  border-radius: 10px;                /* lekerekített sarkok */
+  font-weight: 500;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  color: white;
+  display: inline-block;              /* biztosítja, hogy a scale működjön */
+  margin-top: 1rem;                   /* térköz az előző elemhez, pl. hr */
+  position: relative;                  /* hover scale ne lógjon ki */
+  z-index: 1;                          /* hr fölé kerüljön */
+  transform-origin: center;            /* scale a gomb közepére */
+}
+
+.hero .buttons a.btn:hover {
+  transform: scale(1.1);               /* nagyítás hover-re */
+  background: rgba(255,255,255,0.25);  /* világosabb háttér */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35); /* erősebb árnyék */
+  color: #000e31;                      /* szövegszín sötétkékre vált */
+}
+
+
+/* Hero űrlap középre */
+.tracking-form {
+  margin-top: 1rem;      /* távolság a gombok/fejléc alatt */
+  margin-bottom: 1.5rem; /* távolság alatta lévő elemhez */
+  gap: 0.5rem;           /* inputok közötti távolság */
+}
+
+.contact form {
+  gap: 1rem;             /* inputok, textarea, gomb közötti távolság */
+}
+/* (kép formázás előkészítve) */
+.hero-image {
+  margin-top: 2rem;
+  max-width: 80%;
   border-radius: 12px;
-  font-size: 1.1rem;
-  transition: transform 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.hero .btn:hover {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.35);
-  color: #000e31;
-}
 
 /* ==== Csomagkövető form ==== */
 .tracking-form {
@@ -143,7 +207,11 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
 .stats span { font-size: 1.5rem; font-weight: bold; }
 .mockup-label { margin-top: 0.5rem; font-size: 0.8rem;}
 
-
+.stats {
+  gap: 2rem;             /* statisztika dobozok között */
+  margin-top: 1rem;      /* távolság a felette lévő elemhez */
+  margin-bottom: 2rem;   /* távolság alatta lévő elemhez */
+}
 /* ==== Szolgáltatások ==== */
 .features {
   display: grid;
@@ -310,7 +378,7 @@ h1, h2, h3, h4 { margin-bottom: 0.5em; } /* címsorok alatt kis térköz */
   overflow: hidden;  /* ne legyen görgetősáv a div miatt */
 
   /* Alap gradient a DropNet stílusához illeszkedő színekkel */
-  background: linear-gradient(-45deg, #2923a0, #164fcaeb, #3d0b94d4, #2b5ecd);
+  background: linear-gradient(-45deg, #2923a0, #4c16caeb, #3d0b94d4, #4309b7);
 
   /* A háttér nagyobb mérete, hogy legyen hely a lassú animációnak */
   background-size: 400% 400%;
@@ -454,6 +522,64 @@ a.btn:hover, .logo-btn:hover, .hero .btn:hover, .contact button:hover {
   0% { transform: translateY(0) translateX(0); }
   100% { transform: translateY(-40px) translateX(30px); }
 }
+/* ==== Új finom hover/lebegés effektek ==== */
 
+/* Hero kép lebegése */
+.hero-image {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-image:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
 
+/* Hero statisztika doboz lebegése */
+.hero-mockup .screen {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.hero-mockup .screen:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
 
+/* Szolgáltatások kártyák lebegése */
+.feature {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+.feature:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+/* Árlista kártyák finomított liftezése */
+.pkg-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+.pkg-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+/* Lassan mozgó extra fénycsík a háttérben */
+.background::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.05), rgba(255,0,255,0.05), rgba(255,255,255,0));
+  transform: rotate(25deg);
+  animation: shine 25s linear infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Scroll-al változó hero gradient (opcionális JS-hez) */
+.hero {
+  background-attachment: fixed;
+  background-size: cover;
+}
